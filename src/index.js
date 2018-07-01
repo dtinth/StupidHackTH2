@@ -1,26 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { renderToString } from "react-dom/server";
-import { renderStylesToString } from "emotion-server";
-import { css, keyframes } from "emotion";
-import styled from "react-emotion";
-import "./styles.css";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { renderToString } from 'react-dom/server'
+import { renderStylesToString } from 'emotion-server'
+import { css, keyframes } from 'emotion'
+import styled from 'react-emotion'
+import './styles.css'
 
 const sponsors = [
   {
     image:
-      "https://p-u.popcdn.net/attachments/images/000/010/379/large/scbabacus.png?1530105045"
+      'https://p-u.popcdn.net/attachments/images/000/010/379/large/scbabacus.png?1530105045',
   },
   {
     image:
-      "https://p-u.popcdn.net/attachments/images/000/010/380/large/sellsuki.png?1530105053"
-  }
-];
+      'https://p-u.popcdn.net/attachments/images/000/010/380/large/sellsuki.png?1530105053',
+  },
+]
 
 const individualSponsors = [
-  { name: "Thai Pangsakulyanont" },
-  { name: "Jiraporn Changsamlee" }
-];
+  { name: 'Thai Pangsakulyanont' },
+  { name: 'Jiraporn Changsamlee' },
+]
 
 function App() {
   const content = (
@@ -29,7 +29,7 @@ function App() {
       ให้กลายเป็นจริง! งาน Hackathon แบบกี๊คๆ ที่ไม่จำกัดไอเดีย
       ไม่เน้นฝั่งธุรกิจ แต่เน้นความสนุกสำหรับนักพัฒนาแบบเพียวๆ!!
     </span>
-  );
+  )
   return (
     <Container>
       <Head>
@@ -57,31 +57,31 @@ function App() {
       <Centered>
         <P>
           <a href="http://www.linkbkk.com/" target="_blank">
-            <VenueImg src="https://p-u.popcdn.net/attachments/images/000/010/378/large/link.png?1530104099" />
+            <VenueImg src="https://p-u.popcdn.net/attachments/images/000/010/419/large/link_teikyou_75.jpg?1530391747" />
           </a>
         </P>
         <P>
-          ขอขอบคุณ{" "}
+          ขอขอบคุณ{' '}
           <a href="http://www.linkbkk.com/" target="_blank">
             <strong>LINK Collaboration Space</strong>
-          </a>{" "}
+          </a>{' '}
           ที่สนับสนุนสถานที่ให้เราทำอะไรบ้าๆ บอๆ กัน
         </P>
       </Centered>
       <SectionTitle>Agenda</SectionTitle>
       <Agenda />
       <P>
-        * ระหว่างช่วง Hackathon เรามีกิจกรรมให้ผู้ร่วมงานสามารถสนุกด้วยกัน (เช่น{" "}
+        * ระหว่างช่วง Hackathon เรามีกิจกรรมให้ผู้ร่วมงานสามารถสนุกด้วยกัน (เช่น{' '}
         <a
           href="https://www.facebook.com/phoomparin.mano/posts/327207191078094"
           target="_blank"
         >
           เล่นดนตรีกัน
-        </a>{" "}
-        หรือ{" "}
+        </a>{' '}
+        หรือ{' '}
         <a href="https://www.facebook.com/photo.php?fbid=10208707705404202&set=a.1302432655084.36588.1658509977&type=3&theater">
           ไปกินติ่มซำกันตอนตีสาม
-        </a>) Throughout the hackathon, we have fun activities to{" "}
+        </a>) Throughout the hackathon, we have fun activities to{' '}
         <del>distract the participants</del> keep the atmosphere friendly and
         chill! (These activities are optional, participants may choose to hack
         on their crazy projects.) Examples:
@@ -131,34 +131,34 @@ function App() {
         </P>
       </Centered>
     </Container>
-  );
+  )
 }
 
-const Container = styled("div")`
+const Container = styled('div')`
   padding: 5%;
-`;
+`
 
-const Head = styled("div")`
+const Head = styled('div')`
   font-size: 64px;
   font-weight: bold;
   padding: 10%;
-`;
+`
 
-const HeadContent = styled("div")`
+const HeadContent = styled('div')`
   transform: skewY(-10deg) translateZ(0);
   position: relative;
-`;
+`
 
-const HeadText = styled("div")`
+const HeadText = styled('div')`
   color: #fc5a00;
   text-shadow: ${Array(40)
     .fill()
     .map((_, i) => `${i + 1}px ${i + 1}px 0 #802500`)
-    .join(", ")};
+    .join(', ')};
   -webkit-text-fill-color: transparent;
-`;
+`
 
-const HeadGradient = styled("div")`
+const HeadGradient = styled('div')`
   background: linear-gradient(to bottom, #fdde02, #fc5a00);
   background-clip: text;
   -webkit-background-clip: text;
@@ -168,33 +168,33 @@ const HeadGradient = styled("div")`
   right: 0;
   bottom: 0;
   left: 0;
-`;
+`
 
-const SectionTitle = styled("h2")`
+const SectionTitle = styled('h2')`
   margin: 2em 0 0;
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-`;
+`
 
-const Centered = styled("div")`
+const Centered = styled('div')`
   text-align: center;
-`;
+`
 
-const P = styled("p")`
+const P = styled('p')`
   margin: 1em 0 0;
-`;
-const Ul = styled("ul")`
+`
+const Ul = styled('ul')`
   margin-top: 1em;
-`;
+`
 
 const shake = keyframes`
   from { transform: scale(1); }
   50% { transform: scale(1.05); }
   to { transform: scale(1); }
-`;
+`
 
-const Buton = styled("a")`
+const Buton = styled('a')`
   text-decoration: none;
   color: navy;
   display: inline-block;
@@ -208,23 +208,22 @@ const Buton = styled("a")`
     color: #fff;
     animation: ${shake} 0.1s linear infinite;
   }
-`;
+`
 
-const VenueImg = styled("img")`
+const VenueImg = styled('img')`
   display: block;
   margin: 0 auto;
   max-width: 100%;
-  width: 400px;
   height: auto;
-`;
+`
 
-const SponsorImg = styled("img")`
+const SponsorImg = styled('img')`
   display: block;
   margin: 0 auto;
   max-width: 100%;
   width: 240px;
   height: auto;
-`;
+`
 
 function Agenda() {
   const row = (time, thing) => (
@@ -232,35 +231,35 @@ function Agenda() {
       <td className="time">{time}</td>
       <td className="stuff">{thing}</td>
     </tr>
-  );
+  )
   return (
     <AgendaTable width="100%">
       <tbody>
         <tr>
           <th colSpan={2}>July 14th</th>
         </tr>
-        {row("9:00", "Registration")}
-        {row("9:30", "Opening and team matching")}
-        {row("10:30", "Hack*")}
-        {row("12:00", "Lunch")}
-        {row("13:00", "Hack*")}
-        {row("18:00", "Dinner")}
-        {row("19:00", "Hack*")}
+        {row('9:00', 'Registration')}
+        {row('9:30', 'Opening and team matching')}
+        {row('10:30', 'Hack*')}
+        {row('12:00', 'Lunch')}
+        {row('13:00', 'Hack*')}
+        {row('18:00', 'Dinner')}
+        {row('19:00', 'Hack*')}
         <tr>
           <th colSpan={2}>July 15th</th>
         </tr>
-        {row("0:00", "Hack* (and maybe sleep)")}
-        {row("9:00", "Breakfast")}
-        {row("10:00", "Hack*")}
-        {row("12:00", "Lunch")}
-        {row("13:00", "Hack*")}
-        {row("15:00", "Presentation")}
-        {row("17:30", "Awards and closing")}
+        {row('0:00', 'Hack* (and maybe sleep)')}
+        {row('9:00', 'Breakfast')}
+        {row('10:00', 'Hack*')}
+        {row('12:00', 'Lunch')}
+        {row('13:00', 'Hack*')}
+        {row('15:00', 'Presentation')}
+        {row('17:30', 'Awards and closing')}
       </tbody>
     </AgendaTable>
-  );
+  )
 }
-const AgendaTable = styled("table")`
+const AgendaTable = styled('table')`
   margin-top: 1em;
   th {
     background: #eee;
@@ -274,18 +273,18 @@ const AgendaTable = styled("table")`
     width: 25%;
     white-space: nowrap;
   }
-`;
+`
 
-const html = renderStylesToString(renderToString(<App />));
+const html = renderStylesToString(renderToString(<App />))
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root')
 ReactDOM.render(
   <div>
     <div
-      style={{ border: "5px solid #f00", boxSizing: "content-box", width: 674 }}
+      style={{ border: '5px solid #f00', boxSizing: 'content-box', width: 674 }}
       dangerouslySetInnerHTML={{ __html: html }}
     />
-    <textarea style={{ width: "100%", height: "10em" }} value={html} />
+    <textarea style={{ width: '100%', height: '10em' }} value={html} />
   </div>,
   rootElement
-);
+)
