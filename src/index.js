@@ -310,79 +310,90 @@ const P = styled('p')`
 const Ul = styled('ul')`
   margin-top: 1em;
 `
-// const Buton = styled('a')`
-//   text-decoration: none;
-//   color: navy;
-//   display: inline-block;
-//   padding: 2px 16px;
-//   border: 2px solid navy;
-//   border-radius: 100px;
-//   font-weight: bold;
-//   &:hover {
-//     background: navy;
-//     border-color: navy;
-//     color: #fff;
-//     animation: ${shake} 0.1s linear infinite;
-//   }
-// `
-const shadow1 = '#848284'
-const shadow2 = '#424142'
-const highlight1 = '#D3D0C7'
-const highlight2 = '#fff'
-
-const raisedShadow = css`
-  box-shadow: inset -1px -1px 0 ${shadow2}, inset 1px 1px 0 ${highlight2},
-    inset -2px -2px 0 ${shadow1}, inset 2px 2px 0 ${highlight1};
-`
-const raisedShadowActive = css`
-  box-shadow: inset -1px -1px 0 ${shadow2}, inset 1px 1px 0 ${highlight2},
-    inset -2px -2px 0 ${shadow1}, inset 2px 2px 0 ${highlight1}, -1px -1px black,
-    -1px 1px black, 1px -1px black, 1px 1px black;
-`
-const insetShadowActive = css`
-  box-shadow: inset -1px -1px 0 ${highlight2}, inset 1px 1px 0 ${shadow2},
-    inset -2px -2px 0 ${highlight1}, inset 2px 2px 0 ${shadow1}, -1px -1px black,
-    -1px 1px black, 1px -1px black, 1px 1px black;
-`
 const Buton = styled('a')`
   text-decoration: none;
-  color: black;
   display: inline-block;
-  position: relative;
   padding: 2px 16px;
+  border-radius: 100px;
   font-weight: bold;
-  background: ${highlight1};
+  background-image: linear-gradient(-180deg, #f27eff 0%, #9141ff 100%);
+  border: 1px solid #a449ff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3),
+    inset 0 0 5px 0 rgba(255, 255, 255, 0.5);
+  color: white;
+  text-shadow: 0 1px 5px #000;
   &:hover {
     color: black;
+    background-image: linear-gradient(
+      -180deg,
+      #cfff7e 0%,
+      #58d52e 48%,
+      #68dc49 53%,
+      #3cde1b 100%
+    );
+    border-color: #16b900;
+    text-shadow: 0 0 3px #ffa;
     animation: ${shake} 0.1s linear infinite;
   }
-
-  ${raisedShadow};
-  &:focus {
-    ${raisedShadowActive};
-    outline: none;
-  }
-  &:active {
-    ${insetShadowActive};
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 3px;
-    right: 4px;
-    bottom: 4px;
-    left: 3px;
-    pointer-events: none;
-  }
-  &:focus {
-    outline: none;
-  }
-  &:focus::after {
-    outline: 1px dotted black;
-  }
 `
+// const shadow1 = '#848284'
+// const shadow2 = '#424142'
+// const highlight1 = '#D3D0C7'
+// const highlight2 = '#fff'
+
+// const raisedShadow = css`
+//   box-shadow: inset -1px -1px 0 ${shadow2}, inset 1px 1px 0 ${highlight2},
+//     inset -2px -2px 0 ${shadow1}, inset 2px 2px 0 ${highlight1};
+// `
+// const raisedShadowActive = css`
+//   box-shadow: inset -1px -1px 0 ${shadow2}, inset 1px 1px 0 ${highlight2},
+//     inset -2px -2px 0 ${shadow1}, inset 2px 2px 0 ${highlight1}, -1px -1px black,
+//     -1px 1px black, 1px -1px black, 1px 1px black;
+// `
+// const insetShadowActive = css`
+//   box-shadow: inset -1px -1px 0 ${highlight2}, inset 1px 1px 0 ${shadow2},
+//     inset -2px -2px 0 ${highlight1}, inset 2px 2px 0 ${shadow1}, -1px -1px black,
+//     -1px 1px black, 1px -1px black, 1px 1px black;
+// `
+// const Buton = styled('a')`
+//   text-decoration: none;
+//   color: black;
+//   display: inline-block;
+//   position: relative;
+//   padding: 2px 16px;
+//   font-weight: bold;
+//   background: ${highlight1};
+//   &:hover {
+//     color: black;
+//     animation: ${shake} 0.1s linear infinite;
+//   }
+
+//   ${raisedShadow};
+//   &:focus {
+//     ${raisedShadowActive};
+//     outline: none;
+//   }
+//   &:active {
+//     ${insetShadowActive};
+//   }
+
+//   &::after {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     top: 3px;
+//     right: 4px;
+//     bottom: 4px;
+//     left: 3px;
+//     pointer-events: none;
+//   }
+//   &:focus {
+//     outline: none;
+//   }
+//   &:focus::after {
+//     outline: 1px dotted black;
+//   }
+// `
 
 const html = renderStylesToString(renderToString(<App />))
 
