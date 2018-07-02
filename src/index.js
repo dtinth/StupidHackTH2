@@ -47,7 +47,7 @@ const Container = styled('div')`
 `
 const shake = keyframes`
   from { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
   to { transform: scale(1); }
 `
 
