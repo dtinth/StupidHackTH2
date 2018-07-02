@@ -25,8 +25,8 @@ const individualSponsors = [
   { name: 'Wutichai Saejao' },
   { name: 'Unnawut Leepaisalsuwanna' },
   { name: 'Krisada Vivek' },
-  { name: 'Phitchawat Lukkanathiti' },
-  { name: 'Tot Nattapon', href: 'http://kulap.io' },
+  { name: 'Phitchawat Lukkanathiti', href: 'https://shayennn.com' },
+  { name: 'Tot Nattapon', href: 'https://kulap.io' },
   { name: 'Chai Phonbopit' },
 ]
 
@@ -44,6 +44,11 @@ function App() {
 }
 const Container = styled('div')`
   padding: 5%;
+`
+const shake = keyframes`
+  from { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  to { transform: scale(1); }
 `
 
 function HeadSection() {
@@ -265,6 +270,10 @@ const SponsorImg = styled('img')`
 `
 const IndividualSponsorLink = styled('a')`
   color: inherit;
+  display: inline-block;
+  &:hover {
+    animation: ${shake} 0.1s linear infinite;
+  }
 `
 
 function RsvpSection() {
@@ -300,11 +309,6 @@ const P = styled('p')`
 `
 const Ul = styled('ul')`
   margin-top: 1em;
-`
-const shake = keyframes`
-  from { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  to { transform: scale(1); }
 `
 // const Buton = styled('a')`
 //   text-decoration: none;
