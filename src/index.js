@@ -40,12 +40,14 @@ const sponsors = [
 ]
 
 const individualSponsors = [
-  { name: 'thzhost.com', href: 'https://www.thzhost.com/' },
   { name: 'Thai Pangsakulyanont', href: 'https://dt.in.th/' },
+  { name: 'thzhost.com', href: 'https://www.thzhost.com/' },
   { name: 'Jiraporn Changsamlee' },
   { name: 'Chonlatee Jumratsee' },
   { name: 'Wutichai Saejao' },
   { name: 'Unnawut Leepaisalsuwanna' },
+  { name: 'Fibonacci' },
+  { name: 'Phoomparin Mano' },
   { name: 'Krisada Vivek' },
   { name: 'Phitchawat Lukkanathiti', href: 'https://shayennn.com' },
   { name: 'Tot Nattapon', href: 'https://kulap.io' },
