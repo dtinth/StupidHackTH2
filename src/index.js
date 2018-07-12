@@ -42,7 +42,8 @@ const sponsors = [
 const individualSponsors = [
   { name: 'Thai Pangsakulyanont', href: 'https://dt.in.th/' },
   { name: 'thzhost.com', href: 'https://www.thzhost.com/' },
-  { name: 'Jiraporn Changsamlee' },
+  { name: 'Jiraporn Changsamlee', href: 'http://www.toptier.co.th/' },
+  { name: 'Paul Chonpimai' },
   { name: 'Chonlatee Jumratsee' },
   { name: 'Wutichai Saejao' },
   { name: 'Unnawut Leepaisalsuwanna' },
