@@ -9,11 +9,33 @@ import './styles.css'
 const sponsors = [
   {
     image:
-      'https://p-u.popcdn.net/attachments/images/000/010/379/large/scbabacus.png?1530105045',
+      'https://p-u.popcdn.net/attachments/images/000/010/513/large/LOGO_SCBabacus.png?1530879408',
+    name: 'SCB abacus',
+    href: 'https://www.scbabacus.com/',
   },
   {
     image:
-      'https://p-u.popcdn.net/attachments/images/000/010/380/large/sellsuki.png?1530105053',
+      'https://p-u.popcdn.net/attachments/images/000/010/514/large/LOGO_Sellsuki.png?1530879417',
+    name: 'Sellsuki',
+    href: 'https://www.sellsuki.co.th/',
+  },
+  {
+    image:
+      'https://p-u.popcdn.net/attachments/images/000/010/515/large/LOGO_ThoughtWorks.png?1530879421',
+    name: 'ThoughtWorks',
+    href: 'https://www.thoughtworks.com/',
+  },
+  {
+    image:
+      'https://p-u.popcdn.net/attachments/images/000/010/516/large/LOGO_Nextzy_technologies.png?1530879432',
+    name: 'Nextzy technologies',
+    href: 'https://nextzy.me/',
+  },
+  {
+    image:
+      'https://p-u.popcdn.net/attachments/images/000/010/517/large/LOGO_AppMan.png?1530879437',
+    name: 'AppMan',
+    href: 'https://www.appman.co.th/',
   },
 ]
 
@@ -37,6 +59,7 @@ function App() {
       <ObjectivesSection />
       <VenueSection />
       <AgendaSection />
+      <InformationSection />
       <SponsorsSection />
       <RsvpSection />
     </Container>
@@ -214,17 +237,79 @@ const AgendaTable = styled('table')`
   }
 `
 
+
+function RsvpSection() {
+  return (
+    <React.Fragment>
+      <SectionTitle>RSVP</SectionTitle>
+      <Centered>
+        <P>
+          <Buton
+            href="https://www.facebook.com/events/169587413711647/"
+            target="_blank"
+          >
+            Facebook Event
+          </Buton>
+        </P>
+      </Centered>
+    </React.Fragment>
+  )
+}
+
+function InformationSection() {
+  const mapsUrl =
+    'https://www.google.com/maps/place/LINK+Collaboration+Space/@13.7394434,100.519722,17z/data=!3m1!4b1!4m5!3m4!1s0x30e299312368f6eb:0x822246345e9e0e3b!8m2!3d13.7394382!4d100.5219107'
+  return (
+    <React.Fragment>
+      <SectionTitle>Information</SectionTitle>
+      <InfoItem title="การจัดทีม">
+        ทีมละ 1~4 คน โดยจะมาฟอร์มทีมที่งานหรือจะรวมทีมมาก่อนก็ได้
+      </InfoItem>
+      <InfoItem title="การเดินทาง">
+        สามารถดูได้ใน <a href={mapsUrl}>Google Maps</a>{' '}
+        โดยมีสถานีรถไฟฟ้าที่ใกล้ที่สุดคือ MRT หัวลำโพง (900m) และ BTS
+        สนามกีฬาแห่งชาติ (1.4km)
+      </InfoItem>
+      <InfoItem title="การค้างคืน">
+        สามารถค้างคืนได้ที่งาน โดยทาง LINK Collaboration Space มีห้องอาบน้ำให้
+        แต่อาจจะไม่มีพื้นที่พอสำหรับให้นอนกัน ใกล้เคียงมี{' '}
+        <a href="https://www.google.com/maps/place/NAPLAB/@13.7459523,100.5237929,15z/data=!4m5!3m4!1s0x0:0xbc1777588e50fc5c!8m2!3d13.7459523!4d100.5237929">
+          NapLab
+        </a>{' '}
+        สามารถไปนอนได้
+      </InfoItem>
+      <InfoItem title="การเยี่ยมชมงาน">
+        มาเยี่ยมชมกันได้โดยไม่ต้องมีบัตรครับ
+        โดยเราจะมีการนำเสนอผลงานกันในวันอาทิตย์ที่ 15 ช่วงบ่ายๆ
+      </InfoItem>
+      <InfoItem title="ติดตามข่าวสาร">
+        สามารถติดตามข่าวสารได้ที่{' '}
+        <a href="https://www.facebook.com/events/169587413711647/?active_tab=discussion">
+          Facebook Event: The Stupid Hackathon Thailand #2
+        </a>
+      </InfoItem>
+    </React.Fragment>
+  )
+}
+const InfoItem = ({ children, title }) => (
+  <P>
+    <strong>{title}:</strong> {children}
+  </P>
+)
+
 function SponsorsSection() {
   return (
     <React.Fragment>
       <SectionTitle>$ponsors</SectionTitle>
       <Centered>
         <P>ขอขอบคุณสปอนเซอร์ต่อไปนี้ ที่ทำให้งานนี้เกิดขึ้นมาได้</P>
-        {sponsors.map((x, i) => (
-          <P>
-            <SponsorImg src={x.image} alt={x.name} title={x.name} />
-          </P>
-        ))}
+        <P>
+          {sponsors.map((x, i) => (
+            <SponsorLink href={x.href} target="_blank">
+              <SponsorImg src={x.image} alt={x.name} title={x.name} />
+            </SponsorLink>
+          ))}
+        </P>
         <P>และขอขอบคุณ Individual sponsors ที่ร่วมสมทบทุนเพื่อจัดงานนี้ด้วย</P>
         <P>
           {individualSponsors.map((x, i) => (
@@ -232,9 +317,9 @@ function SponsorsSection() {
               {i > 0 && <br />}
               <strong>
                 {x.href ? (
-                  <IndividualSponsorLink href={x.href}>
+                  <SponsorLink href={x.href} target="_blank">
                     {x.name}
-                  </IndividualSponsorLink>
+                  </SponsorLink>
                 ) : (
                   x.name
                 )}
@@ -262,37 +347,17 @@ function SponsorsSection() {
   )
 }
 const SponsorImg = styled('img')`
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+  margin: 16px;
   width: 240px;
   height: auto;
 `
-const IndividualSponsorLink = styled('a')`
+const SponsorLink = styled('a')`
   color: inherit;
   display: inline-block;
   &:hover {
     animation: ${shake} 0.1s linear infinite;
   }
 `
-
-function RsvpSection() {
-  return (
-    <React.Fragment>
-      <SectionTitle>RSVP</SectionTitle>
-      <Centered>
-        <P>
-          <Buton
-            href="https://www.facebook.com/events/169587413711647/"
-            target="_blank"
-          >
-            Facebook Event
-          </Buton>
-        </P>
-      </Centered>
-    </React.Fragment>
-  )
-}
 
 // ===== Shared elements =====
 const SectionTitle = styled('h2')`
