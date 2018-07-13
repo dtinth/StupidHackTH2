@@ -37,6 +37,11 @@ const sponsors = [
     name: 'AppMan',
     href: 'https://www.appman.co.th/',
   },
+  {
+    image:'https://p-u.popcdn.net/attachments/images/000/010/602/large/LOGO_LINE.png?1531479374',
+    name:'LINE Developers Thailand',
+    href: 'https://medium.com/linedevth'
+  }
 ]
 
 const individualSponsors = [
